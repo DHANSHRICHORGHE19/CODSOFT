@@ -2,14 +2,15 @@
 // Java program for the above approach
 import java.util.Scanner;
 
-public class Demo {
+public class number_game {
 
 	// Function that implements the
 	// number guessing game
+	static int score=0;
 	public static void guessNumber1()
 	{
 		// Scanner Class
-		System.out.println("LEVEL 1: ");
+		System.out.println("\nLEVEL 1: ");
 		// System.out.println("Guess number n 5 trials:");
 		// System.out.println("Enter a no between 1 to 50 to guess: ");
 		Scanner sc = new Scanner(System.in);
@@ -37,6 +38,7 @@ public class Demo {
 				System.out.println(
 					"Congratulations!"
 					+ " You guessed the number. You won Level 1!!");
+					score++;
 					guessNumber2();
 				break;
 			}
@@ -66,7 +68,7 @@ public class Demo {
 	public static void guessNumber2()
 	{
 		// Scanner Class
-		System.out.println("LEVEL 2: ");
+		System.out.println("\nLEVEL 2: ");
 		System.out.println("You entered in second level=>");
 		// System.out.println("Enter a no between 1 to 50 to guess: ");
 		Scanner sc = new Scanner(System.in);
@@ -95,6 +97,7 @@ public class Demo {
 				System.out.println(
 					"Congratulations!"
 					+ " You guessed the number.You won Level 2!!");
+					score++;
 					guessNumber3();
 				break;
 			}
@@ -125,7 +128,7 @@ public class Demo {
 	public static void guessNumber3()
 	{
 		// Scanner Class
-		System.out.println("LEVEL 3: ");
+		System.out.println("\nLEVEL 3: ");
 		System.out.println("You entered in second level=>");
 		// System.out.println("Enter a no between 1 to 50 to guess: ");
 		Scanner sc = new Scanner(System.in);
@@ -151,6 +154,7 @@ public class Demo {
 				System.out.println(
 					"Congratulations!"
 					+ " You guessed the number. You won Level 3!!");
+					score++;
 					guessNumber2();
 				break;
 			}
@@ -170,7 +174,7 @@ public class Demo {
 
 		if (i == K) {
 			System.out.println(
-				"You have exhausted your trials.");
+				"\nGame Over!!You have exhausted your trials.");
 
 			System.out.println(
 				"The number was " + number);
@@ -181,6 +185,28 @@ public class Demo {
 	public static void main(String arg[])
 	{
         // Function Call
-		guessNumber1();
+		
+		System.out.println("\nChoose :\n1:Play the Game\n2:Exit\nEnter your choice:");
+		Scanner s=new Scanner(System.in);
+		int choice=s.nextInt();
+		do {
+			switch(choice)
+			{
+				case 1:
+					guessNumber1();
+					System.out.println("\nYour final score: " + score);
+					System.out.println("Thank you for playng Guessing Game!");
+					break;
+				case 2:
+					System.exit(0);
+					break;
+				default:
+					System.out.println("Enter correct choice!!");
+					break;
+			}
+		}while(choice!=2);
+		
+		
+		
 	}
 }
